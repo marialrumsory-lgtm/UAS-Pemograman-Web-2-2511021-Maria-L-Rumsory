@@ -1,0 +1,17 @@
+<header class="site-header">
+        <div class="wrap">
+            <a href="{{ route('books.index') }}" class="brand">Rak Digital</a>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="{{ route('books.create') }}" class="btn btn-primary">Tambah buku</a>
+                
+                <!-- Tombol Logout -->
+                @auth
+                    <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
+                        @csrf
+                        <button type="submit" class="btn" style="color: var(--danger); border-color: var(--danger);">Keluar</button>
+                    </form>
+                @endauth
+            </div>
+        </div>
+    </header>
